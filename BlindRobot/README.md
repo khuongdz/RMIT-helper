@@ -15,9 +15,9 @@ Consist of 4 possible option: LEFT , RIGHT , UP , DOWN
 
 | Value | Description |
 | :----: | -------------|
-| TRUE | If the move is valid |
-| FALSE | If the move is invalid |
-| WIN | If the move is to the exit |
+| true | If the move is valid |
+| false | If the move is invalid |
+| win | If the move is to the exit |
 
 
 
