@@ -6,14 +6,12 @@ You are given no information about the maze
 
 Your task is to guide the robot using the function go given below
 
-# Function go 
+# Function go
 
-<h2> Input </h2> 
+## Input 
 Consist of 4 possible option: LEFT , RIGHT , UP , DOWN
 
-<br>
-
-<h2> Return value </h2>
+## Return value 
 
 | Value | Description |
 | :----: | -------------|
