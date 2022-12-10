@@ -4,7 +4,7 @@ from typing import Literal
 
 
 class Maze:
-    '''Creating class stimulating maze descripted in the statement'''
+    '''Class stimulating maze descripted in the statement'''
 
     def __init__(self) -> None:
 
