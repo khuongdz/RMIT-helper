@@ -44,7 +44,6 @@ class Robot:
         | 3 | RIGHT |
         '''
 
-        print(dir_num)
         # catch error if cant find any exit
         if dir_num == 4:
             print('No exit found')

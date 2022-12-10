@@ -14,7 +14,6 @@ class Maze:
         with open('input.txt', encoding='utf8') as inputfile:
             self.__data: list[str] = [
                 i.replace('\n', '') for i in inputfile.readlines()]
-            print(self.__data)
 
         # iterate to find the starting point
         for i, vali in enumerate(self.__data):
