@@ -14,7 +14,7 @@ class Maze:
         with open('input.txt', encoding='utf8') as inputfile:
             self.__data: list[str] = [
                 i.replace('\n', '') for i in inputfile.readlines()]
-
+            print(self.__data)
 
         # iterate to find the starting point
         for i, vali in enumerate(self.__data):
@@ -27,7 +27,7 @@ class Maze:
 
     def go_func (
         self,
-        direction: Literal['LEFT', 'RIGHT', 'UP', 'DOWN']
+        direction: str
         ) -> Literal['true', 'false', 'win']:
         '''
         # Function GO
@@ -60,7 +60,6 @@ class Maze:
 
 
 
-
         # if the move is invalid, return 'false'
         if symbol == '.':
             return 'false'
@@ -81,6 +80,7 @@ class Maze:
         if direction == 'RIGHT':
             self.__cur_y += 1
         return 'true'
+        
 
     def show_move_count (self) -> int:
         '''Return the number of move made'''
