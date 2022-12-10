@@ -2,6 +2,7 @@
 
 import sys
 from typing import Literal  # typing library
+import random # RNG
 from maze import Maze  # Maze module
 
 MAZE_SZ = 100
@@ -72,7 +73,10 @@ class Robot:
 
     def __dfs(self, prev_dir: int = -1) -> None:
         '''Use depth first search to search for empty squares'''
-        for dir_num in range(4):
+        rng_range = list(range(4))
+        # include rng to get the result closer to average case
+        # random.shuffle(rng_range) 
+        for dir_num in rng_range:
             if self.__peek_state(dir_num) != '?':
                 # if the state is known, then skip that direction
                 continue
