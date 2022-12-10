@@ -1,4 +1,4 @@
-'''! Module for maze'''
+''' Module for maze'''
 
 from typing import Literal
 
