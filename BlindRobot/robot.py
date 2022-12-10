@@ -2,12 +2,14 @@
 
 import sys
 from typing import Literal  # typing library
-import random # RNG
+import random  # RNG
 from maze import Maze  # Maze module
 
-MAZE_SZ = 100
+INCLUDE_RNG: bool = False
+MAZE_SZ: int = 100
 
 sys.setrecursionlimit(MAZE_SZ**2)
+
 
 class Robot:
     '''Required robot class'''
@@ -48,7 +50,7 @@ class Robot:
         # catch error if cant find any exit
         if dir_num == 4:
             print('No exit found')
-            with open('log.txt','w',encoding='utf8') as file:
+            with open('log.txt', 'w', encoding='utf8') as file:
                 for line in self.__map:
                     file.write(' '.join(line)+'\n')
             sys.exit()
@@ -75,7 +77,8 @@ class Robot:
         '''Use depth first search to search for empty squares'''
         rng_range = list(range(4))
         # include rng to get the result closer to average case
-        # random.shuffle(rng_range) 
+        if INCLUDE_RNG:
+            random.shuffle(rng_range)
         for dir_num in rng_range:
             if self.__peek_state(dir_num) != '?':
                 # if the state is known, then skip that direction
@@ -92,12 +95,13 @@ class Robot:
                 self.__dfs(dir_num)
 
         # after finished, move the robot back to previous step
-        
+
         self.__move(3-prev_dir)
 
     def navigate(self) -> None:
         '''function required by the statement'''
         self.__dfs()
+
 
 a = Robot()
 a.navigate()

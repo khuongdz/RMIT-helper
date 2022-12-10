@@ -24,10 +24,10 @@ class Maze:
                     self.__cur_x: int = i
                     self.__cur_y: int = j
 
-    def go_func (
+    def go_func(
         self,
         direction: str
-        ) -> Literal['true', 'false', 'win']:
+    ) -> Literal['true', 'false', 'win']:
         '''
         # Function GO
 
@@ -57,15 +57,14 @@ class Maze:
         if direction == 'RIGHT':
             symbol = self.__data[self.__cur_x][self.__cur_y+1]
 
-
-
         # if the move is invalid, return 'false'
         if symbol == '.':
             return 'false'
 
         # if the move is to the exit, return 'win'
         if symbol == 'X':
-            print(f'Reach exit successfully using {self.__move_count} move(s).')
+            print(
+                f'Reach exit successfully using {self.__move_count} move(s).')
             return 'win'
 
         # if the move is valid, then change the current position
@@ -79,13 +78,12 @@ class Maze:
         if direction == 'RIGHT':
             self.__cur_y += 1
         return 'true'
-        
 
-    def show_move_count (self) -> int:
+    def show_move_count(self) -> int:
         '''Return the number of move made'''
         return self.__move_count
 
-    def restart (self) -> None:
+    def restart(self) -> None:
         '''Restart the game'''
         self.__cur_x = self.__init_x
         self.__cur_y = self.__init_y
